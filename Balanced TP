@@ -1,0 +1,7 @@
+ex_matrix=data.frame(D1=c(3,2,8,200),D2=c(1,6,3,300),
+                    D3=c(7,5,3,350),D4=c(4,9,2,150),supply=c(250,350,400,1000),
+                    row.names = c("1","2","3","Demand"))
+ 
+ex_matrix
+nwc(ex_matrix)
+mincost(ex_matrix)

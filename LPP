@@ -1,0 +1,10 @@
+install.packages(“lpSolve”)
+library(lpSolve)
+obj=c(10,12)
+con=matrix(c(2,1,1,2),nrow=2,byrow=T)
+dir=c("<=","<=")
+rhs=c(104,76)
+max_z=lp("max",obj,con,dir,rhs)
+max_z
+x=lp("max",obj,con,dir,rhs)$solution
+x

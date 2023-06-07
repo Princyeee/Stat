@@ -1,0 +1,26 @@
+library(lpSolve)
+# Set transportation costs matrix
+cost <- matrix(c(10,2,3,15,9,5,10,15,2,4,
+                15,5,14,7,15,20,15,13,25,8), nrow = 4, byrow = TRUE)
+cost
+# Set customers and suppliers' names
+colnames(cost) <- c("D1", "D2", "D3", "D4")
+rownames(cost) <- c("S1", "S2", "S3")
+ 
+# Set unequality/equality signs for suppliers
+row.dir<- rep("<=", 4)
+ 
+# Set right hand side coefficients for suppliers
+row.rhs <- c(35,40,20,30)
+ 
+# Set unequality/equality signs for customers
+col.dir <- rep(">=", 5)
+ 
+# Set right hand side coefficients for customers
+col.rhs <- c(20,20,40,10,35)
+ 
+# Final value (z)
+lp.transport(cost, "min", row.dir, row.rhs, col.dir, col.rhs)
+ 
+# Variables final values
+lp.transport(cost, "min", row.dir, row.rhs, col.dir, col.rhs)$solution

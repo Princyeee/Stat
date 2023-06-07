@@ -1,0 +1,14 @@
+install.packages("TransP")
+library(TransP)
+#Input matrix where last row is the Demand and last column is the Supply
+ex_matrix=data.frame(A=c(5,3,4,7,30),B=c(1,9,2,11,20),
+                    C=c(8,6,7,10,15),D=c(7,7,6,4,10),E=c(5,8,5,9,20),
+                    F=c(0,0,0,0,22),supply=c(15,25,42,35,117),
+                    row.names = c("1","2","3","4","Demand"))
+ 
+ex_matrix
+#NWCR
+nwc(ex_matrix)
+#LCM
+mincost(ex_matrix)
+ 

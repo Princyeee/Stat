@@ -1,0 +1,10 @@
+cost <- matrix(c(42,48,38,37,40,49,52,51,39,38,40,43) nrow = 3, byrow = TRUE)
+cost
+colnames(cost) <- c("W1", "W2", "W3",”W4”)
+rownames(cost) <- c("F1", "F2", "F3")
+row.dir<- rep("<=", 3)
+row.rhs <- c(160,150,190)
+col.dir <- rep(">=", 4)
+col.rhs <- c(80,90,110,220)
+lp.transport(cost, "min", row.dir, row.rhs, col.dir, col.rhs)
+lp.transport(cost, "min", row.dir, row.rhs, col.dir, col.rhs)$solution
